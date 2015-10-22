@@ -11,11 +11,17 @@ var SongQueue = Songs.extend({
     this.on('dequeue', function(song) {
       if(this.at(0) === song) {
         this.remove(song);
+        if(this.at(0)) {
+          this.playFirst();
+        }
       }
     });
 
     this.on('ended', function() {
-      return this;
+      this.remove(this.at(0));
+      if(this.at(0)) {
+        this.playFirst();
+      }
     });
   },
 
@@ -32,3 +38,4 @@ var SongQueue = Songs.extend({
   //added playFirst method
     //plays the first song in the queue
   //added dequeue method in initialize - removes song at this.at(0)
+  //Implemented dequeue and end - both now function as expected

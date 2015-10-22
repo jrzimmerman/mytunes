@@ -25,8 +25,7 @@
       $(function(){
         // set up model objects
         var library = new Songs(songData);
-        var queue = new SongQueue(songData);
-        var app = new AppModel({library: library, queue: queue});
+        var app = new AppModel({library: library});
 
         // build a view for the top level of the whole app
         var appView = new AppView({model: app});
@@ -38,6 +37,3 @@
   </body>
 </html>
 
-<!-- Changes 
-        added (in the last <script tag>) var queue = new SongQueue();
--->
