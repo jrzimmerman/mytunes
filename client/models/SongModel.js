@@ -5,9 +5,17 @@ var SongModel = Backbone.Model.extend({
     // Triggering an event here will also trigger the event on the collection
     this.trigger('play', this);
   },
+  
   enqueue: function(){
-    // Triggering an event here will also trigger the event on the collection
-    this.trigger('click', this);
+    this.trigger('enqueue', this);
+  },
+
+  dequeue: function() {
+    this.trigger('dequeue', this);
+  },
+
+  ended: function() {
+    this.trigger('ended', this);
   }
 
 });
@@ -15,3 +23,5 @@ var SongModel = Backbone.Model.extend({
 // Changes:
   // Added enqueue method 
     //corresponds to LibraryEntryView; triggered by LibraryEntryView
+  //Added dequeue method - this corresponds to SongQueue collection (initialize)
+  //Added ended method - this corresponds to SongQueue collection (initialize)
