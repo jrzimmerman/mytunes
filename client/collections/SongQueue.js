@@ -5,7 +5,7 @@ var SongQueue = Songs.extend({
     this.on('add',function() {
       if(this.at(1) === undefined){
         this.playFirst();
-      }
+      } 
     });
 
     this.on('dequeue', function(song) {
