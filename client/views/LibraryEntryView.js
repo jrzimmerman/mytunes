@@ -6,10 +6,7 @@ var LibraryEntryView = Backbone.View.extend({
   template: _.template('<td>(<%= artist %>)</td><td><%= title %></td>'),
 
   events: {
-    'click': function() {
-      // if currentSong === undefined
-        // play song: this.model.play()
-      this.model.play();   
+    'click': function() { 
       this.model.enqueue();
     }
   },
@@ -24,4 +21,4 @@ var LibraryEntryView = Backbone.View.extend({
 
 //Changes
   //added this.model.enqueue()
-    //corresponds to SongModel enqueue method
+    //corresponds to SongModel enqueue method 

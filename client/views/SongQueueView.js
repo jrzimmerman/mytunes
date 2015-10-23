@@ -4,7 +4,7 @@ var SongQueueView = Backbone.View.extend({
   tagName: "table",
 
   initialize: function() {
-    this.render();
+    this.collection.on('add remove',this.render, this);
   },
 
   render: function(){
@@ -22,6 +22,6 @@ var SongQueueView = Backbone.View.extend({
 });
 
 // Changes
-  // call render() in the initialize method
+  // call render() in the initialize method only on adds and removes
   // detached children
   // created an html table with SongQueueEntryView - this will add songs to the song queue

@@ -31,3 +31,12 @@ var PlayerView = Backbone.View.extend({
   //in initialize:
     //plugged in the on event - this.$el.on('ended', function() {...
     //binded this to the correct context
+
+
+//Notes:
+  //Playerview only communicates to ne model - likely it is the Song model
+  //PlayerView has an event that listens to when a song ends - when song ends:
+    //Playerview talks to controller
+    //Contoller communicates intent to a Model (not sure which one yet)
+      //The intent is likely to remove a song from the song view - which means it is likely talking to the song model
+    //Model invokes a method that removes song from SongQueueView
